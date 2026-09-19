@@ -22,7 +22,15 @@ int my_rand(void) {
 }
 
 void generate_secret(int secret[4]) {
-#error TODO: Generate 4 unique digits using used[] + do-while + my_rand(). Run "clings hint" for help.
+    int used[10]={0};
+    int d,i;
+    for(i=0;i<4;i++){
+        do{d=my_rand()%10;} while (used[d]);
+        secret[i]=d;
+        used[d]=1;    
+    }
+
+
 }
 
 int main(void) {

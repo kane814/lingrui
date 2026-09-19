@@ -33,6 +33,7 @@ int main(void) {
     int words = 0;
     char *p = NULL;
     int counter = 0;
+    int input;
 
     fgets(buf, sizeof(buf), stdin);
     /* 去掉换行 */
@@ -43,8 +44,43 @@ int main(void) {
         }
 
     i = 0;
+    
+    while(buf[i]!='\0'){
+        input =get_input_type(buf[i]);
+    
+    if (state==0 && input==0)
+    {
+        state=0;
+    }
+    else if(state==0&& input==1){
+        state=1;
+        p=&buf[i];
+        counter=0;
+        counter++;
+    }
+    else if(state==1&&input==0){
+        state=0;
+        words++;
+        printf("word %d found!\n",words);
+        for(int i=0;i<counter;i++){
+            putchar(p[i]);
+        }
+        putchar('\n');
+    }
+    else if(state==1&&input==1){
+          state=1;
+          counter++;
+    }
+    i++;
+}
+if (state == 1) {
+    words++;
+    printf("word %d found!\n", words);
+    for (int j = 0; j < counter; j++)
+        putchar(p[j]);
+    putchar('\n');
+}
 
-#error TODO: Implement state machine loop with 4 branches for word counting. Run "clings hint" for help.
 
     printf("there is %d words found!\n", words);
     return 0;

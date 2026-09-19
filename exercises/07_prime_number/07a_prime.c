@@ -23,9 +23,21 @@ int main(void) {
     int num;
     int i;
     int max = 0;
+    for (num = 2; num < 100; num++) {
+        int isprime = 1; // 假设是素数
+        int limit = (int)sqrt((double)num);
+        for (i = 2; i <= limit; i++) {
+            if (num % i == 0) {
+                isprime = 0; // 不是素数
+                break;
+            }
+        }
+        if (isprime) {
+            max = num; // 不断更新，最后就是最大素数
+        }
+    }
 
-#error TODO: Fix this exercise. Run "clings hint" for help.
-
+   
     printf("max prime is %d\n", max);
 
     return 0;

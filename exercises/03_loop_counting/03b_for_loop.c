@@ -16,12 +16,16 @@
 #include <stdio.h>
 
 int main(void) {
-    int i;
+    int i=0;
     int sum = 0;
-
-#error TODO: Fix this exercise. Run "clings hint" for help.
-
-#error TODO: Fix this exercise. Run "clings hint" for help.
-
+    int counter;
+    for(counter=10;counter>0;counter--){
+        printf("counter = %d\n",counter);
+    }
+    do{
+       i++;
+       sum+=i;
+    }while(i<10);//到9得停止，读的不顺，个人感觉不如while
+    printf("sum = %d\n",sum);
     return 0;
 }

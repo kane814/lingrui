@@ -25,7 +25,11 @@
  * Return value:  how many digit in this num
  */
 int find(int num, int digit) {
-#error TODO: Fix this exercise. Run "clings hint" for help.
+int i=0;    
+int m=num;
+if(m%10==9)i++;
+if(num/10==9)i++;
+return i;
 }
 
 int main(void) {

@@ -17,8 +17,12 @@
 
 char *mystrcpy(char *dest, const char *src) {
     assert(dest != NULL && src != NULL);
-
-#error TODO: Implement mystrcpy using pointer idiom. Run "clings hint" for help.
+    while(*dest++=*src++){
+        if(*src=='\0'){
+            break;
+        }
+    }
+    return dest;
 }
 
 int main(void) {

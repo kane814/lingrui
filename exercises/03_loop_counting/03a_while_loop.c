@@ -16,7 +16,12 @@
 #include <stdio.h>
 
 int main(void) {
-#error TODO: Fix this exercise. Run "clings hint" for help.
+    int counter=0;
+    do{
+        counter++;
+        printf("counter = %d\n",counter);
+    }
+    while(counter<10);
 
     return 0;
 }
