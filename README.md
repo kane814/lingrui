@@ -1,4 +1,3 @@
-学长学姐，“搬运clings题目”是要提交的内容，别的是开始前的小练习
 # 🐣 Clings 招新考核
 
 <p align="center">
